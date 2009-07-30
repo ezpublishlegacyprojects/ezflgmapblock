@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension name="ezflgmapblock">
+  <file name="classes" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="GeoLib" path="/classes" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="src" path="/classes/GeoLib" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="calculations.php" path="/classes/GeoLib/src" md5sum="34e4a18000f06bc81bebb4ddfaad216a"/>
+  <file name="exceptions" path="/classes/GeoLib/src" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="system_execution_exception.php" path="/classes/GeoLib/src/exceptions" md5sum="8255235058b7f0875026ed154e8666a5"/>
+  <file name="wrong_argument_format_exception.php" path="/classes/GeoLib/src/exceptions" md5sum="d7d48c9b5e23fca4ddd6fb1ad4e6a20a"/>
+  <file name="system_code_bits.php" path="/classes/GeoLib/src" md5sum="92eb7e77a06c0e25d39e65b9cff74efb"/>
+  <file name="tests" path="/classes/GeoLib" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="calculations_mockup.php" path="/classes/GeoLib/tests" md5sum="1c994ada4f701801491f80798f819ca2"/>
+  <file name="callSystemExecutable.php" path="/classes/GeoLib/tests" md5sum="99ffe579d775abffdc7711014f97659d"/>
+  <file name="computeZoneBounds.php" path="/classes/GeoLib/tests" md5sum="f4d019af36c14400ef53bdceae9c38a6"/>
+  <file name="convertDecimalCordinatesToDegrees.php" path="/classes/GeoLib/tests" md5sum="265a4dc4cf7f74122ea0603549a0bfa8"/>
+  <file name="convertDegreeCoordinateToRadians.php" path="/classes/GeoLib/tests" md5sum="75e12912d5a9902a8f3fe46efbbc8879"/>
+  <file name="convertRadianCoordinateToDegrees.php" path="/classes/GeoLib/tests" md5sum="ae4013664ffc7106ff2a7b905eca7cb8"/>
+  <file name="createShellArgument.php" path="/classes/GeoLib/tests" md5sum="7958e0ca865a9482fba25b1a43762408"/>
+  <file name="generateSolrSearchZoneFilters-for-bd.php" path="/classes/GeoLib/tests" md5sum="f60fc5d36f6fe6d871894878825e7d0c"/>
+  <file name="generateSolrSearchZoneFilters.php" path="/classes/GeoLib/tests" md5sum="cd602151053e3087a6c6d742964c09c3"/>
+  <file name="getSearchZoneDescription.php" path="/classes/GeoLib/tests" md5sum="5bf71345973805a019781c17e9204a81"/>
+  <file name="design" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="ezflow" path="/design" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="javascript" path="/design/ezflow" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="ezflgmapblock.js" path="/design/ezflow/javascript" md5sum="d3237f271abaef3a236d590fba441960"/>
+  <file name="yui" path="/design/ezflow/javascript" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="build" path="/design/ezflow/javascript/yui" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="connection" path="/design/ezflow/javascript/yui/build" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="connection-debug.js" path="/design/ezflow/javascript/yui/build/connection" md5sum="40999f0ec82e2d2d8a7854ac4e479253"/>
+  <file name="connection-min.js" path="/design/ezflow/javascript/yui/build/connection" md5sum="baf5183c60707f6bc2c506f811f0f6a1"/>
+  <file name="connection.js" path="/design/ezflow/javascript/yui/build/connection" md5sum="6000c27aea72e3c980ce882a2b66e0bb"/>
+  <file name="json" path="/design/ezflow/javascript/yui/build" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="json-debug.js" path="/design/ezflow/javascript/yui/build/json" md5sum="0ebd899673df1d2177739ebc0094c831"/>
+  <file name="json-min.js" path="/design/ezflow/javascript/yui/build/json" md5sum="2b78b78b5211684f7a7f3f89e304c374"/>
+  <file name="json.js" path="/design/ezflow/javascript/yui/build/json" md5sum="0ebd899673df1d2177739ebc0094c831"/>
+  <file name="override" path="/design/ezflow" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="templates" path="/design/ezflow/override" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="block" path="/design/ezflow/override/templates" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="block_geolocated_articles.tpl" path="/design/ezflow/override/templates/block" md5sum="852124444f60d4e70100e2940e54146e"/>
+  <file name="gmaps_1item_large.tpl" path="/design/ezflow/override/templates/block" md5sum="477b74ceac22e44fbc66dd958fda8b54"/>
+  <file name="gmaps_1item_large.tpl.bak" path="/design/ezflow/override/templates/block" md5sum="14c54a586572e36665f589b396d878d8"/>
+  <file name="gmaps_1item_streetview.tpl" path="/design/ezflow/override/templates/block" md5sum="5aeccd9afd6427de83ffd067d022c05c"/>
+  <file name="gmaps_1item_tiny.tpl" path="/design/ezflow/override/templates/block" md5sum="4cb0ae985daffe719b6925147857876b"/>
+  <file name="templates" path="/design/ezflow" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="content" path="/design/ezflow/templates" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="datatype" path="/design/ezflow/templates/content" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="view" path="/design/ezflow/templates/content/datatype" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="ezgmaplocation.tpl" path="/design/ezflow/templates/content/datatype/view" md5sum="cb86f2602247bf126fc1bf48df24ccc2"/>
+  <file name="gmap.tpl" path="/design/ezflow/templates" md5sum="0231252a5f741c0adfcb4cad445f87b0"/>
+  <file name="parts" path="/design/ezflow/templates" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="gmap_material.tpl" path="/design/ezflow/templates/parts" md5sum="12841d2f637dc828fc87f76ba2d36d4e"/>
+  <file name="gmap_material_listing.tpl" path="/design/ezflow/templates/parts" md5sum="e2a69b05be3274d6f782d30aa5b78768"/>
+  <file name="gmap_material_points.tpl" path="/design/ezflow/templates/parts" md5sum="6a5c3ce938ffbd22f18b0845e4cf0d1d"/>
+  <file name="standard" path="/design" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="templates" path="/design/standard" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="content" path="/design/standard/templates" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="datatype" path="/design/standard/templates/content" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="edit" path="/design/standard/templates/content/datatype" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="ezgmaplocation.tpl" path="/design/standard/templates/content/datatype/edit" md5sum="1d9a084417e7b1bd0fc84431d4becd3d"/>
+  <file name="modules" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="ajax" path="/modules" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="geosearch.php" path="/modules/ajax" md5sum="215068d825b84e9a83178ef227d5195a"/>
+  <file name="module.php" path="/modules/ajax" md5sum="e7d238a3e4f78b9d501bbfb4d33a2136"/>
+  <file name="settings" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="block.ini.append.php" path="/settings" md5sum="150378f16a235752002027ac67cd5fb6"/>
+  <file name="content.ini.append.php" path="/settings" md5sum="f15d264a83489616a42851a39028d57d"/>
+  <file name="design.ini.append.php" path="/settings" md5sum="695512cb9e97a60c86cdc18146b0b5c7"/>
+  <file name="module.ini.append.php" path="/settings" md5sum="1dac9e5178dd69dd269370dd8f088b8c"/>
+  <file name="site.ini.append.php" path="/settings" md5sum="86740bdaa2c1ed7702df80282afb37ec"/>
+  <file name="siteaccess" path="/settings" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="eng" path="/settings/siteaccess" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="override.ini.append.php" path="/settings/siteaccess/eng" md5sum="1d659575e58fc9e03c9344869c696010"/>
+  <file name="template.ini.append.php" path="/settings" md5sum="7f74ce91c7f3a78dc14dca09234ca67e"/>
+</extension>
