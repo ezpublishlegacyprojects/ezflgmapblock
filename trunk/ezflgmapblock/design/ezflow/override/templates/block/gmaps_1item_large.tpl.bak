@@ -1,0 +1,163 @@
+{if is_set( $block.custom_attributes.node_id )}
+<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key={ezini('SiteSettings','GMapsKey')}" type="text/javascript"></script>
+	{def $geolocated_articles = fetch( 'content', 'list', hash( 'parent_node_id', $block.custom_attributes.node_id,
+																'class_filter_type', 'include',
+																'class_filter_array', array( 'article' ),
+																'sort_by', array( 'modified', false() )
+																 ))
+		 $articles_folder = fetch( 'content', 'node', hash( 'node_id', $block.custom_attributes.node_id ))																 	
+		 $seed = rand( 0, 100000 )
+	}
+<script type="text/javascript">
+<!--
+
+	var points{$seed} = [];
+	
+	{* retrieve all geo-locations *}
+	{def $infoWindowContents=''
+		 $intro=''}
+	{foreach $geolocated_articles as $article}
+		{set-block variable=$intro}
+			{attribute_view_gui attribute=$article.data_map.intro}
+		{/set-block}
+		{set $infoWindowContents = concat( '<h2><a href="', $article.url_alias|ezurl( no ), '">', $article.name, '</a></h2>', $intro|trim( '\n', '\r', ' ', '\x0B' )|wash( 'javascript' )|explode('\n')|implode( '' ) )|trim( ' ' )}
+		{set $infoWindowContents = concat( $infoWindowContents, '<br /><a href="', $article.url_alias|ezurl( no ), '">', "Read more..."|i18n("design/base"), '</a>' )}
+		
+		points{$seed}.push( [ new GLatLng( {$article.data_map.location.content.latitude}, {$article.data_map.location.content.longitude} ), '{$infoWindowContents}' ] );
+	{/foreach}
+-->
+</script>
+
+<!-- BLOCK: START -->
+<div class="block-type-2items">
+
+<div class="border-box block-style1-box-outside">
+<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
+<div class="border-ml"><div class="border-mr"><div class="border-mc">
+<div class="border-content">
+
+<!-- BLOCK BORDER INSIDE: START -->
+
+<div class="border-box block-style1-box-inside">
+<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
+<div class="border-ml"><div class="border-mr"><div class="border-mc">
+<div class="border-content">
+
+<!-- BLOCK CONTENT: START -->
+
+<div class="class-article">
+    {* 
+    <div class="attribute-header">
+        <h2><a href={$geolocated_article.url_alias|ezurl()}>{$geolocated_article.name}</a></h2>
+    </div>
+    *}
+    
+    <div class="attribute-header">
+        <h2><a href={$articles_folder.url_alias|ezurl()}>{$articles_folder.name}</a></h2>
+    </div>
+    
+    <div class="attribute-long">
+    <ul>
+	{foreach $geolocated_articles as $key => $article}
+		<li><a onclick="map{$seed}.panTo( points{$seed}[{$key}][0] );map{$seed}.setCenter( points{$seed}[{$key}][0], 13 );map{$seed}.openInfoWindowHtml( points{$seed}[{$key}][0], points{$seed}[{$key}][1] );">{$article.name}</a></li>
+	{/foreach}
+	</ul>    
+    </div>
+    
+    <div class="separator"></div>
+    
+    {* <div class="attribute-long">{attribute_view_gui attribute=$geolocated_article.data_map.location type='large'}</div> *}
+    <div class="attribute-long">
+    	<div id="map_{$seed}" style="width: 240px; height: 150px"></div>
+    </div>
+
+	{*
+    <div class="attribute-short">
+        {attribute_view_gui attribute=$geolocated_article.data_map.body}
+    </div>
+    *}
+</div>
+
+<!-- BLOCK CONTENT: END -->
+
+</div>
+</div></div></div>
+<div class="border-bl"><div class="border-br"><div class="border-bc"></div></div></div>
+</div>
+
+<!-- BLOCK BORDER INSIDE: END -->
+
+
+</div>
+</div></div></div>
+<div class="border-bl"><div class="border-br"><div class="border-bc"></div></div></div>
+</div>
+
+</div>
+<!-- BLOCK: END -->
+
+<script type="text/javascript">
+<!--
+	
+    var mapid{$seed} = 'map_{$seed}';
+    var eZIconURL{$seed} = "{'design/standard/images/favicon.ico'|ezroot( 'no', 'full' )}";
+    {literal}
+    
+    var map{/literal}{$seed}{literal} = null;
+    var gmapExistingOnload_ = null;
+
+    if (window.onload)
+    {
+            //Hang on to any existing onload function.
+            gmapExistingOnload_ = window.onload;
+    }
+
+    function initMap{/literal}{$seed}{literal}(ev)
+    {
+        //Run any onload that we found.
+        if ( gmapExistingOnload_ )
+        {
+        	gmapExistingOnload_(ev);
+        }
+        if (GBrowserIsCompatible()) {
+          var GMapOptions_{/literal}{$seed}{literal} = {};
+          GMapOptions_{/literal}{$seed}{literal} = { size : new GSize( 440, 600 ) };
+          
+          map{/literal}{$seed}{literal} = new GMap2( document.getElementById( mapid{/literal}{$seed}{literal} ), GMapOptions_{/literal}{$seed}{literal} );
+          map{/literal}{$seed}{literal}.addControl( new GSmallMapControl() );
+          map{/literal}{$seed}{literal}.setCenter( points{/literal}{$seed}{literal}[0][0] );
+          for ( var i=0; i < points{/literal}{$seed}{literal}.length; i++ )
+          {
+          	map{/literal}{$seed}{literal}.addOverlay( createMarker( points{/literal}{$seed}{literal}[i][0], points{/literal}{$seed}{literal}[i][1] ) );	
+          }
+          setTimeout( 'map{/literal}{$seed}{literal}.setZoom( 13  ); map{/literal}{$seed}{literal}.openInfoWindowHtml( points{/literal}{$seed}{literal}[0][0], points{/literal}{$seed}{literal}[0][1] );', 4000);
+          // map{/literal}{$seed}{literal}.openInfoWindowHtml( points{/literal}{$seed}{literal}[0][0], points{/literal}{$seed}{literal}[0][1] );
+        }
+    };
+    
+    // Creates a marker at the given point
+    // Clicking the marker will hide it
+    function createMarker( latlng, html ) {
+      var baseIcon = new GIcon();
+      baseIcon.shadow = "http://www.google.com/mapfiles/shadow50.png";
+      baseIcon.iconSize = new GSize( 16, 16);
+      baseIcon.shadowSize = new GSize(37, 34);
+      baseIcon.iconAnchor = new GPoint(9, 34);
+      baseIcon.infoWindowAnchor = new GPoint(9, 2);
+      baseIcon.infoShadowAnchor = new GPoint(18, 25);
+      baseIcon.image = eZIconURL{/literal}{$seed}{literal};
+      
+      markerOptions = { icon:baseIcon };            
+      var marker = new GMarker( latlng, markerOptions );
+      marker.value = Math.random();
+      GEvent.addListener( marker, "click", function() { map{/literal}{$seed}{literal}.openInfoWindowHtml( latlng, html ); } );
+      return marker;
+	}    
+
+	// load the maps whenever the DOM is ready.
+	YAHOO.util.Event.onDOMReady( initMap{/literal}{$seed}{literal} );
+    {/literal}
+-->
+</script>
+
+{/if}
