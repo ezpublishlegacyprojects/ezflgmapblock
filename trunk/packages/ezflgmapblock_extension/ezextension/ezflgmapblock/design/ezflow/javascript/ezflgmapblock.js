@@ -1,16 +1,3 @@
-Array.prototype.contains = function (element) 
-{
-    for (var i = 0; i < this.length; i++) 
-    {
-        if (this[i] == element) 
-        {
-            return true;
-        }
-    }
-    return false;
-};
-  
-
 YAHOO.namespace( 'ezflgmapblock' );
 
 YAHOO.ezflgmapblock.GeoSearchState = function () 
@@ -35,10 +22,6 @@ YAHOO.ezflgmapblock.GeoSearchState = function ()
         }
     }
 }();
-
-// Alias for YAHOO.ezflgmapblock.GeoSearchState.getState, for better readability when 
-// embedded in DOM elements. 
-gs = YAHOO.ezflgmapblock.GeoSearchState.getState;
 
 YAHOO.ezflgmapblock.GeoSearchManager = function () 
 {
