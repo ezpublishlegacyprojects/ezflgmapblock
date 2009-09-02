@@ -38,17 +38,7 @@
     <br />
     <input type="text" size="15" name="ezfind_geosearch_radius_{$seed}" id="ezfind_geosearch_radius_{$seed}" value="{'How far from you?'|i18n( 'extension/ezflgmapblock/geosearch' )}"> ( {'Meters'|i18n( 'extension/ezflgmapblock/geosearch' )} )
     <br />
-    <h5><div style="padding: 2px;" id="ezfind_geosearch_feedback_{$seed}"></div></h5>    
-    <hr />
-    <div style="display: none;">
-    {include uri="design:content/datatype/edit/ezgmaplocation.tpl"
-             address_div_id=concat( 'ezfind_geosearch_origin_', $seed )
-             search_button_id=concat( 'ezfind_geosearch_submit_', $seed )
-             place_address_div=false()
-             place_search_button=false()
-             simple_ids=true()
-             seed=$seed}
-    </div>
+    <h5><div style="padding: 2px;" id="ezfind_geosearch_feedback_{$seed}"></div></h5>
 </div>
 
 <div id="gmap_material_{$seed}" name="gmap_material_{$seed}">

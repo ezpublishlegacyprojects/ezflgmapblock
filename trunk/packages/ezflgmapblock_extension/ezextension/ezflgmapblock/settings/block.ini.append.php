@@ -1,18 +1,16 @@
 <?php /*
 
 [General]
-AllowedTypes[]=GMapsItem
+AllowedTypes[]=GMapItem
 
-[GMapsItem]
-Name=Google Maps item
+[GMapItem]
+Name=Google Map item
 ManualAddingOfItems=disabled
-CustomAttributes[]=node_id
-UseBrowseMode[node_id]=true
-ViewList[]=gmaps_1item_large
-ViewList[]=gmaps_1item_tiny
-ViewList[]=gmaps_1item_streetview
-ViewName[gmaps_1item_large]=Gmaps 1 item - Large
-ViewName[gmaps_1item_tiny]=Gmaps 1 item - Tiny
-ViewName[gmaps_1item_streetview]=Gmaps 1 item - Street View
+CustomAttributes[]=parent_node_id
+CustomAttributes[]=classes
+CustomAttributes[]=limit
+UseBrowseMode[parent_node_id]=true
+ViewList[]=gmap_item_large
+ViewName[gmap_item_large]=GMap Item (large)
 
 */ ?>
